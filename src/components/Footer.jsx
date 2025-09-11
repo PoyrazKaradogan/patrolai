@@ -9,7 +9,7 @@ export default function Footer() {
     phone: "📞 +1 661 360 2059",
     email: "📧 info@patrolsnet.com",
     website: "🌐 www.patrolsnet.com",
-    motto: "Geleceği kodluyor, teknolojiyi şekillendiriyoruz.",
+    motto: "Geleceği kodluyor, teknolojiyi şekillendiriyoruz...",
   };
   const currentYear = new Date().getFullYear();
 
