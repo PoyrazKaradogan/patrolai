@@ -1,0 +1,205 @@
+.page {
+ 
+  padding: 64px 32px;
+  background-color: #ffffff;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 48px;
+  transition: all 0.6s ease;
+}
+
+.imageBlock {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  transition: all 0.6s ease;
+}
+
+.imageBlock.shrinked {
+  width: 40%;
+}
+
+.image {
+  width: 100%;
+  border-radius: 12px;
+
+  transition: transform 0.6s ease;
+  display: block;
+}
+
+.image:hover {
+  transform: none;
+}
+
+.button {
+
+  margin-top: 50px;
+  bottom: 24px;
+  right: 24px;
+  padding: 12px 24px;
+  font-size: 0.8rem;
+  background-color: #0090F9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button:hover {
+  background-color: #0090F9;
+  transform: translateY(-2px);
+}
+
+.arrow {
+  animation: pulseArrow 1.2s infinite;
+}
+
+@keyframes pulseArrow {
+  0% { transform: translateX(0); opacity: 1; }
+  50% { transform: translateX(6px); opacity: 0.6; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.cardGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 16px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  max-width: 720px;
+}
+
+.cardGrid.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card {
+  background-color: #0090F9;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px #444;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card.closed {
+  padding: 28px 16px;
+  min-height: 200px;
+}
+
+.card.open {
+  padding: 32px 16px;
+  min-height: 240px;
+  background-color: rgba(50, 50, 50, 0.95);
+  transform: scale(1.02);
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  color: #ffffff;
+}
+
+.cardPrompt {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: #ffffff;
+  font-style: italic;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.card.open .cardPrompt {
+  display: none;
+}
+
+.cardIcon,
+.cardDescription,
+.cardHint {
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.card.open .cardIcon,
+.card.open .cardDescription,
+.card.open .cardHint {
+  opacity: 1;
+  max-height: 200px;
+  margin-top: 8px;
+}
+
+.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imageBlock,
+  .imageBlock.shrinked {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+    .button {
+    position: static;
+    width: 100%;
+    margin-top: 16px;
+    justify-content: center;
+  }
+
+  .card {
+    min-height: auto;
+    padding: 24px 12px;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .cardPrompt {
+    font-size: 0.75rem;
+  }
+
+  .cardIcon {
+    font-size: 1.4rem;
+  }
+
+  .cardDescription {
+    font-size: 0.85rem;
+  }
+
+  .cardHint {
+    font-size: 0.75rem;
+  }
+}

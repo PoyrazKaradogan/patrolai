@@ -1,0 +1,91 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logoIcon {
+  height: 40px;
+}
+
+.logoText {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #003366;
+}
+
+.burger {
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: none;
+}
+
+.menu {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.link {
+  color: #003366;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.login {
+  border: 1px solid #003366;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.languageSelect {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Mobil düzenleme */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    top: 64px;
+    right: 24px;
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .languageSelect {
+    margin-top: 12px;
+  }
+}

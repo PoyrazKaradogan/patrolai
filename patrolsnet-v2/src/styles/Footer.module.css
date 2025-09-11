@@ -1,0 +1,44 @@
+.footer {
+  background-color: black;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contactInfo p {
+  margin: 0.5rem 0;
+  color: var(--text-color);
+}
+
+.motto {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--secondary-glow);
+  text-shadow: 0 0 8px var(--secondary-glow);
+  margin-bottom: 1rem;
+}
+
+.websiteLink {
+  color: var(--primary-glow);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px var(--primary-glow);
+}
+
+.websiteLink:hover {
+  color: var(--primary-glow);
+  text-decoration: underline;
+  transform: translateY(-2px);
+}
+
+.copy {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  color: #666;
+}

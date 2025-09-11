@@ -1,0 +1,22 @@
+.main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-inline: 32px;
+  padding-block: 96px 64px; /* Üst padding navbar yüksekliği kadar */
+  box-sizing: border-box;
+   min-height: 100vh;
+  padding: 32px;
+  background-color: #f9f9f9;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding-inline: 16px;
+    padding-block: 96px 32px; /* Mobilde de üst boşluk sabit kalmalı */
+  }
+}

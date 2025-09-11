@@ -1,0 +1,85 @@
+.page {
+  padding: 64px 32px;
+  background-color: #ffffff;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Her modül bloğu */
+.module {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  background-color: #08384f;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.module:hover {
+  transform: translateY(-4px);
+}
+
+/* Sol PNG alanı */
+.image {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* Sağ metin alanı */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Başlık */
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-family: 'Orbitron', sans-serif;
+  color: #ffffff;
+}
+
+/* Açıklama */
+.description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+}
+
+/* Mobil uyum */
+@media (max-width: 768px) {
+  .module {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 240px;
+    margin-bottom: 16px;
+  }
+
+  .content {
+    align-items: center;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}
