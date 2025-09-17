@@ -8,7 +8,7 @@
 
 .title {
   font-size: clamp(2rem, 5vw, 2rem);
-  color: #2746b7;
+  color: #09374e;
   font-family: 'Orbitron', sans-serif;
   margin-bottom: 20px;
 }
@@ -41,12 +41,12 @@
 .cardTitle {
   font-size: 2rem;
   font-weight: bold;
-  color: #000000;
+  color: #08384f;
   margin-bottom: 8px;
 }
 
 .cardDesc {
   font-size: 1rem;
-  color: #333333; /* Daha yumuşak ve kurumsal ton */
+  color: #08384f; /* Daha yumuşak ve kurumsal ton */
   line-height: 1.6;
 }

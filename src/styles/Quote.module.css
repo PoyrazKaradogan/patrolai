@@ -1,80 +1,86 @@
-.wrapper {
-  margin-top: 48px;
-  padding: 32px 16px;
-  background-color: #ffffff;
-  min-height: 100vh;
-  font-family: 'Segoe UI', sans-serif;
-  color: #1a1a1a;
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #09374e;
+  color: white;
+  padding: 64px 32px;
 }
 
-.pageTitle {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #2746b7;
-  text-align: center;
+.heroImage {
+  width: 100%;
+  max-width: 960px;
+  border-radius: 12px;
   margin-bottom: 32px;
 }
 
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: space-between;
-  align-items: stretch;
+.title {
+  font-size: 2.8rem;
+  font-weight: 700;
 }
 
-.left {
-  flex: 1 1 360px;
-  max-width: 480px;
+.subtitle {
+  font-size: 1.2rem;
+  margin-top: 16px;
+  color: #08384f;
+}
+
+.wrapper {
+  padding: 64px 32px;
   background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  color: #08384f;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.left,
 .right {
-  flex: 1 1 360px;
-  max-width: 480px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  justify-content: flex-start;
-  align-self: stretch;
+  gap: 32px;
 }
 
 .card {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  color: #333333;
-  font-size: 1rem;
+  background-color: #f9f9f9;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  color: #08384f;
+}
+
+.sectionHeading {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #08384f;
 }
 
 .map {
-  margin-top: auto;
+  background-color: #eef6fa;
+  color: #08384f;
 }
 
-.heading {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #2746b7;
-  margin-bottom: 8px;
-}
-
+/* Mobil uyum */
 @media (max-width: 768px) {
   .grid {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
-  .left,
-  .right {
-    max-width: 100%;
+  .heroImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
   }
 }

@@ -6,7 +6,7 @@ import HeroSection from './components/HeroSection';
 import NeonHero from './components/NeonHero';
 import Footer from './components/Footer';
 import Quote from './pages/Quote';
-import ServicesContent from './pages/ServicesContent';
+import Upcontent from './components/Upcontent';
 import Corporate from './pages/Corporate';
 
 function App() {
@@ -27,14 +27,15 @@ function App() {
                 <div id="features" style={{ padding: '4rem 0' }}>
                   {/* Özellikler bölümü */}
                 </div>
-                <ServicesContent />
+                <Upcontent />
               </>
             }
           />
 
           {/* Sayfalar */}
-          <Route path="/iletisim" element={<Quote />} />
-      
+     <Route path="/iletisim" element={<Quote />} />
+  <Route path="/Quote" element={<Quote />} />
+
           <Route path="/kurumsal" element={<Corporate />} />
         </Routes>
 

@@ -1,5 +1,5 @@
 .page {
- 
+
   padding: 64px 32px;
   background-color: #ffffff;
   color: #fff;
@@ -44,7 +44,7 @@
   right: 24px;
   padding: 12px 24px;
   font-size: 0.8rem;
-  background-color: #0090F9;
+  background-color: #08384f;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -57,7 +57,7 @@
 }
 
 .button:hover {
-  background-color: #0090F9;
+  background-color: #08384f;
   transform: translateY(-2px);
 }
 
@@ -88,7 +88,7 @@
 }
 
 .card {
-  background-color: #0090F9;
+  background-color: #08384f;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 0 10px #444;
@@ -159,11 +159,28 @@
     align-items: center;
   }
 
-  .imageBlock,
-  .imageBlock.shrinked {
-    width: 100%;
-    margin-bottom: 24px;
-  }
+ .imageBlock {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.button {
+  margin-top: 24px;
+  padding: 16px 32px;
+  font-size: 1rem;
+  background-color: #08384f;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
 
   .cardGrid {
     grid-template-columns: 1fr;
@@ -171,12 +188,7 @@
     max-width: 100%;
   }
 
-    .button {
-    position: static;
-    width: 100%;
-    margin-top: 16px;
-    justify-content: center;
-  }
+
 
   .card {
     min-height: auto;

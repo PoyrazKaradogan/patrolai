@@ -14,19 +14,18 @@ export default function Quote() {
   return (
     <Layout>
       <section className={styles.wrapper}>
-      
         <div className={styles.grid}>
+          {/* Sol alan: Form */}
           <div className={styles.left}>
-         
             <MailForm />
           </div>
+
+          {/* Sağ alan: İletişim kartı + harita */}
           <div className={styles.right}>
             <div className={styles.card}>
-            
               <ContactCard />
             </div>
             <div className={`${styles.card} ${styles.map}`}>
-             
               <MapEmbed />
             </div>
           </div>

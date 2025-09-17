@@ -84,6 +84,8 @@ const translations = {
       },
   };
 
+
+
 export default function NeonHero() {
   const [showCards, setShowCards] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
@@ -92,8 +94,16 @@ export default function NeonHero() {
   const t = translations[lang] || translations["tr"];
 
   const handleShowCards = () => {
-    setShowCards(!showCards);
+    const nextState = !showCards;
+    setShowCards(nextState);
     setActiveIndex(null);
+
+    // Scroll işlemi sadece açılışta tetiklenmeli
+    if (!showCards && cardsRef.current) {
+      setTimeout(() => {
+        cardsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 300);
+    }
   };
 
   const toggleCard = (index) => {
@@ -102,60 +112,62 @@ export default function NeonHero() {
 
   useEffect(() => {
     if (showCards && cardsRef.current) {
-      const cards = cardsRef.current.querySelectorAll(`.${styles.card}`);
-      cards.forEach((card, i) => {
-        setTimeout(() => {
-          card.classList.add(styles.show);
-        }, i * 150);
+      const observer = new MutationObserver(() => {
+        cardsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+        observer.disconnect();
       });
+
+      observer.observe(cardsRef.current, { childList: true, subtree: true });
     }
   }, [showCards]);
 
-  return (
-    <section className={styles.page}>
-      <div className={styles.hero}>
-        <div className={`${styles.imageBlock} ${showCards ? styles.shrinked : ""}`}>
-          <img
-            src="/images/telefon.png"
-            alt="PatrolsNet mobil uygulama"
-            className={styles.image}
-          />
-          <button onClick={handleShowCards} className={styles.button}>
-            {showCards ? t.closeButton : (
-              <>
-                {t.button} <span className={styles.arrow}>→</span>
-              </>
-            )}
-          </button>
-        </div>
+ return (
+  <section className={styles.page}>
+    {/* Hero ve kartlar */}
+    <div className={styles.hero}>
+      <div className={`${styles.imageBlock} ${showCards ? styles.shrinked : ""}`}>
+        <img
+          src="/images/telefon.png"
+          alt="PatrolsNet mobil uygulama"
+          className={styles.image}
+        />
 
-        {showCards && (
-          <div ref={cardsRef} className={`${styles.cardGrid} ${styles.active}`}>
-            {t.features.map((feature, index) => (
-           <div
-  key={index}
-  className={`${styles.card} ${activeIndex === index ? styles.open : styles.closed}`}
-  style={{ boxShadow: `0 0 12px ${feature.color}` }}
-  onClick={() => toggleCard(index)}
->
-  <div className={styles.cardTitle}>{feature.title}</div>
-
-  {activeIndex !== index && (
-    <div className={styles.cardPrompt}>Detay için tıkla</div>
-  )}
-
-  {activeIndex === index && (
-    <>
-      <div className={styles.cardIcon}>{feature.icon}</div>
-      <div className={styles.cardDescription}>{feature.description}</div>
-      <div className={styles.cardHint}>{t.hint}</div>
-    </>
-  )}
-</div>
-            ))}
-          </div>
-        )}
+        {/* 👇 Buton doğrudan görselin altına yerleştirildi */}
+        <button onClick={handleShowCards} className={styles.button}>
+          {showCards ? t.closeButton : (
+            <>
+              {t.button} <span className={styles.arrow}>→</span>
+            </>
+          )}
+        </button>
       </div>
-    </section>
-  );
-}
+
+      {showCards && (
+        <div ref={cardsRef} className={`${styles.cardGrid} ${styles.active}`}>
+          {t.features.map((feature, index) => (
+            <div
+              key={index}
+              className={`${styles.card} ${activeIndex === index ? styles.open : styles.closed}`}
+              style={{ boxShadow: `0 0 12px ${feature.color}` }}
+              onClick={() => toggleCard(index)}
+            >
+              <div className={styles.cardTitle}>{feature.title}</div>
+
+              {activeIndex !== index && (
+                <div className={styles.cardPrompt}>Detay için tıkla</div>
+              )}
+
+              {activeIndex === index && (
+                <>
+                  <div className={styles.cardIcon}>{feature.icon}</div>
+                  <div className={styles.cardDescription}>{feature.description}</div>
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+);
+};

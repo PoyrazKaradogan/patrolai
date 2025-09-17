@@ -43,7 +43,7 @@ export default function MapEmbed() {
           font-family: 'Segoe UI', sans-serif;
           font-size: 2rem;
           font-weight: 600;
-          color: #2746b7;
+          color: #08384f;
           margin: 0;
           text-align: left;
         }

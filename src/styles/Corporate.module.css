@@ -1,80 +1,104 @@
 .hero {
-  margin-top: 64px;
-  background: linear-gradient(135deg, #2746b7, #1e3799);
-  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding: 80px 24px;
+  background-color: #09374e;
+  color: white;
+  padding: 64px 32px;
 }
 
-.title {
-  font-size: 2.4rem;
-  font-family: 'Orbitron', sans-serif;
-  margin-bottom: 16px;
+.heroImage {
+  width: 100%;
+  max-width: 960px;
+  border-radius: 12px;
+  margin-bottom: 32px;
 }
 
-.subtitle {
+.heroText .title {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.heroText .subtitle {
   font-size: 1.2rem;
-  font-weight: 400;
+  margin-top: 16px;
 }
 
 .gridSection {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 32px;
-  padding: 64px 24px;
-  background-color: #ffffff;
+  padding: 64px 32px;
+  background-color: #f9f9f9;
 }
 
 .card {
-  background-color: #f5f7fa;
-  padding: 24px;
+  background-color: white;
+  padding: 32px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
 }
 
 .cardTitle {
   font-size: 1.4rem;
-  color: #2746b7;
-  margin-bottom: 12px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #09374e;
 }
 
 .cardText {
-  font-size: 1.05rem;
-  color: #333333;
+  font-size: 1rem;
   line-height: 1.6;
+  color: #09374e;
 }
 
 .valuesSection {
+  padding: 64px 32px;
   background-color: #ffffff;
-  padding: 64px 24px;
-  text-align: center;
 }
 
 .sectionHeading {
   font-size: 1.6rem;
-  color: #2746b7;
+  font-weight: bold;
   margin-bottom: 24px;
+  text-align: center;
+  color: #09374e;
+}
+
+.valuesSection {
+  padding: 64px 32px;
+  background-color: #ffffff;
+}
+
+.sectionHeading {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #09374e;
 }
 
 .valuesList {
   list-style: none;
   padding: 0;
-  font-size: 1.05rem;
-  color: #333333;
-  line-height: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  font-size: 1rem;
+  color: #09374e;
 }
 
 .ctaSection {
-  background-color: #f0f4ff;
   text-align: center;
-  padding: 48px 24px;
+  padding: 64px 32px;
+  background-color: #09374e;
 }
 
 .ctaButton {
-  display: inline-block;
-  padding: 14px 32px;
-  background-color: #2746b7;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #09374e;
+  padding: 16px 32px;
   font-weight: 600;
   border-radius: 8px;
   text-decoration: none;
@@ -82,5 +106,16 @@
 }
 
 .ctaButton:hover {
-  background-color: #1e3799;
+  background-color: #eeeeee;
+}
+
+
+
+.ctaButton:hover {
+  background-color: #eeeeee;
+}
+@media (max-width: 768px) {
+  .valuesList {
+    grid-template-columns: 1fr; /* 👈 mobilde tek sütun */
+  }
 }

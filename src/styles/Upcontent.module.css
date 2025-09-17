@@ -1,55 +1,89 @@
-.wrapper {
-  padding: 96px 0;
-  background-color: #fff;
-}
-
-.title {
-  text-align: center;
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #2746b7;
-  margin-bottom: 64px;
-  font-family: 'Orbitron', sans-serif;
-}
-
-.grid {
+.page {
+  padding: 64px 32px;
+  background-color: #ffffff;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 64px;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 48px;
 }
 
-.card {
-  background-color: #f9f9f9;
-  padding: 32px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  text-align: left;
+/* Her modül bloğu */
+.module {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  background-color: #08384f;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.2);
+  transition: transform 0.3s ease;
 }
 
-.heading {
-  font-size: 1.4rem;
+.module:hover {
+  transform: translateY(-4px);
+}
+
+/* Sol PNG alanı */
+.image {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* Sağ metin alanı */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Başlık */
+.title {
+  font-size: 1.5rem;
   font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  font-family: 'Orbitron', sans-serif;
+  color: #ffffff;
 }
 
-.text {
-  font-size: 1rem;
-  color: #333;
+/* Açıklama */
+.description {
+  font-size: 1.2rem;
   line-height: 1.6;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .grid {
+/* Mobil uyum */
+@media (max-width: 768px) {
+  .page {
     grid-template-columns: 1fr;
-    padding: 0 32px;
+  }
+
+  .module {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 240px;
+    margin-bottom: 16px;
+  }
+
+  .content {
+    align-items: center;
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
   }
 }
