@@ -8,21 +8,21 @@ import Footer from './components/Footer';
 import Quote from './pages/Quote';
 import Upcontent from './components/Upcontent';
 import Corporate from './pages/Corporate';
+import HeroFeature from './components/HeroFeature';
 
 function App() {
   return (
     <LanguageProvider>
-    
       <Router>
         <ResponsiveNavbar />
 
         <Routes>
-          {/* Anasayfa */}
           <Route
             path="/"
             element={
               <>
                 <HeroSection />
+                <HeroFeature />
                 <NeonHero />
                 <div id="features" style={{ padding: '4rem 0' }}>
                   {/* Özellikler bölümü */}
@@ -31,11 +31,8 @@ function App() {
               </>
             }
           />
-
-          {/* Sayfalar */}
-     <Route path="/iletisim" element={<Quote />} />
-  <Route path="/Quote" element={<Quote />} />
-
+          <Route path="/iletisim" element={<Quote />} />
+          <Route path="/Quote" element={<Quote />} />
           <Route path="/kurumsal" element={<Corporate />} />
         </Routes>
 

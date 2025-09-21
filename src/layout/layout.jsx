@@ -8,7 +8,7 @@ export default function Layout({ children }) {
     <>
       <ResponsiveNavbar />
       <main className={styles.main}>{children}</main>
-      
+ 
     </>
   );
 }
