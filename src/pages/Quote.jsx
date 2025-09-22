@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Layout from "../layout/Layout";
+import Layout from ".././layout/layout";
 import MailForm from "../components/MailForm";
 import ContactCard from "../components/ContactCard";
 import MapEmbed from "../components/MapEmbed";
