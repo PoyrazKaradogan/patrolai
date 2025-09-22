@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Layout from "../layout/Layout";
+import Layout from ".././layout/layout";
 import styles from "../styles/Corporate.module.css";
 import { useLanguage } from "../context/LanguageContext";
 
